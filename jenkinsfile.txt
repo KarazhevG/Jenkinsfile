@@ -1,0 +1,54 @@
+pipeline {
+    agent any
+    environment {
+        PROJECT_NAME = 'Neptun'
+        OWNER_NAME = 'Georgiy Karazhev'
+    }
+    stages {
+        stage('1-Build') {
+            steps {
+                echo 'Hello'
+                echo 'World'
+                echo '!!!!!'
+            }
+        }
+        stage('2-Test') {
+            steps {
+                echo 'This'
+                echo 'Is'
+                echo 'First'
+                sh "cat /home/ansible/ansible.cfg"
+                echo 'Test'
+            }
+        }
+        stage('3-Deploy') {
+            steps {
+                echo 'Go'
+                echo 'To'
+                sh '''
+                echo "line 1"
+                echo "line 2"
+                echo "line 3"
+                '''
+                echo 'Deploy'
+            }
+        }
+        stage('4-Prod') {
+            steps {
+                echo 'Run'
+                echo 'To'
+                echo 'Prod'
+            }
+        }
+        stage('Congretiulation') {
+            steps {
+                echo 'Jenkins'
+                echo 'it'
+                echo 'is'
+                echo 'top'
+                echo 'Technologies'
+                echo 'Hello ${OWNER_NAME}'
+            }
+        }
+    }
+}
